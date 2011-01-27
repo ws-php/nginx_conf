@@ -1,4 +1,0 @@
-# From http://tracker.phpbb.com/browse/PHPBB3-9589
-location ~ /(config\.php|common\.php|includes|cache|files|store|images/avatars/upload) {
-  deny all;
-}

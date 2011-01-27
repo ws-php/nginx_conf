@@ -1,0 +1,15 @@
+# From http://tracker.phpbb.com/browse/PHPBB3-9589
+location ~ ^/(config\.php|common\.php|includes|cache|files|store|images/avatars/upload)/ {
+  deny all;
+}
+
+# Let's feed it
+location / {
+  rewrite ^/cat([0-9]+)\.html$ /index.php?c=$1 last;
+  rewrite ^/forum([0-9]+)-([0-9]+)\.html$ /viewforum.php?f=$1&start=$2 last;
+  rewrite ^/forum([0-9]+)\.html$ /viewforum.php?f=$1 last;
+  rewrite ^/topic([0-9]+)-([0-9]+)\.html$ /viewtopic.php?t=$1&start=$2 last;
+  rewrite ^/topic([0-9]+)\.html$ /viewtopic.php?t=$1 last;
+  rewrite ^/post([0-9]+)\.html$ /viewtopic.php?p=$1 last;
+  rewrite ^/member([0-9]+)\.html$ /profile.php?mode=viewprofile&u=$1 last;
+}
