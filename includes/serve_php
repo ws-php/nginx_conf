@@ -6,4 +6,13 @@ location ~ \.php$ {
   # Change this to the host:port where your PHP-FPM is listening
   # By the way, this is the default
   fastcgi_pass localhost:9000;
+  fastcgi_index index.php;
+  fastcgi_connect_timeout 60;
+  fastcgi_send_timeout 180;
+  fastcgi_read_timeout 180;
+  fastcgi_buffer_size 128k;
+  fastcgi_buffers 4 256k;
+  fastcgi_busy_buffers_size 256k;
+  fastcgi_temp_file_write_size 256k;
+  fastcgi_intercept_errors on;
 }

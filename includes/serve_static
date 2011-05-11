@@ -1,6 +1,6 @@
 # Serve static files... FAST!!!!
-location ~ ^/(jpg|jpeg|png|gif|swf|flv|mp4|mov|avi|wmv|m4v|mkv|ico|js|css|txt|html|htm)/  {
-  expires max;
+location ~* ^.+\.(css|js|jpg|jpeg|gif|png|ico|gz|svg|svgz|ttf|otf|woff|eot|mp4|ogg|ogv|webm)$ {
+  expires 30d;
   log_not_found off;
 }
 
