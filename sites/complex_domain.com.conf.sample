@@ -1,7 +1,7 @@
 # # Lets redirect all www.* requests to the non-www domain
 # server {
 #   server_name  www.domain.com;
-#   rewrite ^ http://domain.com$request_uri permanent;
+#   rewrite ^ $scheme://domain.com$request_uri? permanent;
 #   access_log off;
 # }
 #
